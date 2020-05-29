@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                传统字符串：所有单括号，双括号括起来的都叫做字符串,不能有回车或者换行
+                ECMA6字符串：反引号 ``
+                    1. ECMA6 字符串
+                    2.${变量/表达式/函数调用}
+
+            */
+            var str = 'hello\
+            world';
+            document.write(str+"<br/>");
+            var new_str = `hello 
+            
+
+
+            world!`;
+            document.write(new_str+"<br/>");
+            alert(new_str);
+
+            function showSelf({name,age,sex="男"}){
+
+                // document.write("my name is "+ name+","+age+" years old and I am a "+ sex +"<br/>");
+                document.write(`我的名字${name}叫,今年${Math.max(age,10,30)}岁,我是一名${sex}性`);
+            }
+
+            showSelf({
+                name:"xiaoming",
+
+                age:10
+            });
+            
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

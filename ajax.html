@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajax</title>
+    </head>
+    <script>
+        /*
+            ajax 异步的JavaScript和xml(数据传输格式)
+                 异步的JavaScript和数据传输
+                 【注】 ajax是前后端数据交互的搬运工，都可以异步执行
+                优点：
+                    1. 种类丰富，可以自定义
+                缺点：
+                    1. 解析比较麻烦
+                    2. 不适合轻量级数据
+            json数据格式(字符串)(95%)移动端应用
+                优点：
+                    1. 轻量级数据
+                    2. 解析比较轻松
+                缺点：
+                    1. 数据种类比较少
+                    2. 传输数据量比较少
+                JSON.parse()
+                JSON.stringify()
+
+        */
+        /*
+            【注】任何一个程序都是有很多小程序组成的
+            【注】用来描述一个程序的运行状态
+              
+        */
+        window.onload = function(){
+            // 创建ajax对象
+            var xhr = XMLHttpRequest();
+            // 调用open
+            /*
+               第一个参数：请求方式 get post
+               第二个参数： url
+               第三个参数：是否异步
+                true 异步
+                false 同步 
+            */
+            xhr.open("get","1.txt",true);
+            //3.调用send
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    alert(xhr.responseText);
+                }
+            }
+        }
+
+    </script>
+    <body>
+        <button id="btn1">按钮</button>
+    </body>
+</html>

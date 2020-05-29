@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                集合：
+                    1. 不重复
+                    2. 无序
+                Set
+                Map
+            
+            */
+            let imgs = new Set();
+            //添加元素
+            imgs.add(100);
+            imgs.add(100);
+            imgs.add("Hello");
+            imgs.add("Hello"),
+            imgs.add(true);
+            imgs.add(new String("world"));
+            imgs.add(new String("world"));
+            console.log(imgs);
+
+
+            /*
+                集合遍历
+                
+                 for of
+            */
+            for(let item of imgs.keys()){
+                // console.log(item);
+            }
+            for(let item of imgs.values()){
+                // console.log(item);
+            }
+            for(let item of imgs.entries()){
+                //输出的是键值对 
+                console.log(item);
+            }
+            //数组变集合
+            var set = new Set([10,10,20,30,30,true]);
+            console.log(set);
+            //集合变数组 将数据结构展开成数组
+            var arr = [...set];
+            console.log(arr);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

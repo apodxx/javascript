@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var year = 2008;
+        var month = 2 ;
+        var date = 8;
+        var arr = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+        var sum = 0;
+        for(var i = 1;i<month;i++){
+            sum+=arr[i];     
+        }
+        if((year%400==0)||(year%4==0&&year%100!=0)){
+            if(month>2){
+                sum +=1;
+            }
+        }
+        sum += date;
+        console.log(sum);
+
+
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

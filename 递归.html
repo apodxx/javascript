@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        for(var i = 0 ;i <10 ;i++){
+            document.write("Hello World!<br/>");
+        }
+        //求水仙花数
+        function shuixianhuaNumber(){
+            
+            for(var  i = 0 ;i<1000 ;i ++){
+                var result = 0;
+                var hundred =parseInt( i/100);
+                var ten = parseInt(i%100/10);
+                var num = parseInt(i%10);
+                result = Math.pow(hundred,3)+Math.pow(ten,3)+Math.pow(num,3);
+
+                if(result == i ){
+                    console.log(result);
+                }
+
+            }
+        }
+        // shuixianhuaNumber();
+        //求回文数
+        function huiwenNumber(){
+            for(var i = 10000;i<99999;i++){
+                var ten_thousand = parseInt(i/10000);
+                var thousand = parseInt(i%10000/1000);
+                var ten = parseInt(i%100/10);
+                var num = parseInt(i%10);
+                if(ten_thousand==num&&thousand==ten){
+                    console.log(i);
+                }
+            }
+        }
+        // huiwenNumber();
+        //求最大公约数
+        function gongyueshuNumber(number1,number2){
+            var min = number1>number2?number2:number1;
+            var result;
+            for(var i =1 ;i <=min;i++){
+                
+                if(number1 % i == 0 && number2 % i == 0 ){
+                    result = i;
+                }
+            }
+            console.log(result);
+        }
+        // gongyueshuNumber(11,12);
+        function show(){
+            console.log(arguments[0]);
+        }
+        show(12,"hello",10,true);
+        /*
+            递归
+                1. 函数自己调用自己(内存管机制)
+                2. 遗憾情况有参数
+                3. 一般情况有return
+            方法：
+                1.首先去找临界值，即无需计算，获得的值
+                2.找这一次和上一次的关系
+                3.假设当前函数已经可以使用，调用自身计算上一次 
+        */
+       var sum =0
+       function recursion(n){
+            if(n==1){
+                return 1;
+            }
+            return recursion(n-1)+n;
+       }
+       console.log(recursion(100));
+       //斐波那契
+       function fibo(n){
+           if(n < 4){
+                return 1;    
+           }
+           return fibo(n-1)+fibo(n-3);
+
+       }
+        //    console.log(fibo(9));
+        //猴子吃桃
+        var i = 0 ;
+       function peach(n){ 
+        if(n==1){
+            return 1;
+        }
+        return (peach(n-1)+1)*2;       
+        }
+    //    console.log(peach(4));
+        function print(n){
+            if(n==0){
+                return ;
+            }
+            document.write("print<br/>");
+            return print(n-1);
+        }
+        print(10);
+
+    </script>
+</head>
+<body>
+    <button id="btn1"></button>
+</body>
+</html>
